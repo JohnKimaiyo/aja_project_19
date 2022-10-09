@@ -1,0 +1,19 @@
+{
+  "name": "19-ajax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnKimaiyo/aja_project_19.git"
+  },
+  "author": "john kimaiyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnKimaiyo/aja_project_19/issues"
+  },
+  "homepage": "https://github.com/JohnKimaiyo/aja_project_19#readme"
+}
