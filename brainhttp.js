@@ -1,19 +1,19 @@
-export class brainhttp{
-    constructor(){
+export class brainhttp {
+    constructor() {
         this.http = new XMLHttpRequest();
     }
 
     // get request
-    get = (url,callback) =>{
-        this.http.open('GET',url,true);
+    get = (url, callback) => {
+        this.http.open('GET', url, true);
         this.http.send();
-        this.http.onload = () =>{
-            if(this.http.status === 200){
+        this.http.onload = () => {
+            if (this.http.status === 200) {
                 let data = this.http.responseText;
                 let employees = JSON.parse(data)
                 callback(users);
             }
-            else{
+            else {
                 callback(`error:${this.http.status}`);
             }
         }
@@ -21,19 +21,40 @@ export class brainhttp{
 }
 
 // post request
-post = (url,employee,callback) =>{
-    this.http.open('POST',url,true);
-    this.http.setRequestHeader('content-Type','application/json');
+post = (url, employee, callback) => {
+    this.http.open('POST', url, true);
+    this.http.setRequestHeader('content-Type', 'application/json');
     this.http.send(JSON.stringify(employees));
-    this.http.onload = () =>{
+    this.http.onload = () => {
         let dat = this.http.responseText;
         let employees = JSON.parse(data)
         callback(employees);
     }
 }
 
+// put request
+put = (url, employees, callback) => {
+    this.http.open('PUT', url, true);
+    this.http.setRequestHeader('content-Type', 'application/json');
+    this.http.send(JSON.stringify(employees));
+    this.http.onload = () => {
+        let data = this.http.responseText;
+        let employees = JSON.parse(data)
+        callback(employees);
+    }
+}
 
-
+// delete request
+delet = (url, callback) => {
+    this.http.open('DELETE', url, true);
+    this.http.setRequestHeader('content-Type', 'application/json');
+    this.http.send();
+    this.http.onload = () => {
+        let data = this.http.responseText;
+        let employees = JOSN.parse(data)
+        callback(employees);
+    }
+}
 
 
 
